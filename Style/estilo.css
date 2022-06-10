@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#area-cabecalho{
+    background-color:#339aff;
+    padding: 20px;
+    text-align: center;
+    color: #fffffffe;
+    border-bottom: #336aff 3px solid;
+}
+body{
+    background-color: #eee;
+}
+#area-principal{
+   width: 100%;
+    min-width: 800px;
+    float: left;
+    
+    margin: 10px auto;
+ 
+
+}
+#area-lateral{
+    width: 24%;
+    max-width: 290px;
+    background: #fff;
+    float: right;
+}
+.conteudo{
+    width:75%;
+    min-height: 400px;
+    background: #fff;
+    float: left;
+}
+.conteudo .area{
+    padding: 20px;
+}
+
+.conteudo-lat{
+   
+   
+    margin: 5px;
+    background: rgb(248, 247, 247);
+    min-height: 200px;
+}
+.conteudo-lat h2{
+    background-color: #339aff;
+    padding: 3px;
+    text-align: center;
+    color: #fff;
+}
+#area-p{
+    width:90%;
+    min-width:500px;
+     margin: 10px auto;
+}
+.clear{
+    clear: both;
+}
+h3{
+    background: #336aff;
+    color: #eee;
+    padding: 5px;
+}
+/*Button*/
+#enviar{
+    background-color: #336aff;
+    color:#fff;
+    padding: 3px;
+    border-radius: 2px 4px;
+}
+/*Select*/
+#select-calc{
+    border: #336aff 1px solid;
+}
+#select-calc:hover{
+    border: #336aff 2px solid;
+}
+@media  screen and (max-width: 500px) {
+    
+   
+    #area-principal{
+
+        max-width: 600px;
+        min-width: 0;
+    }
+    #area-p{
+        min-width: 300px;
+       
+        /*margin: 10px 0;*/
+    }
+    .conteudo{
+        width: 100%;
+        max-width: 400px;
+    }
+    #area-lateral{
+        visibility: hidden;
+        display: none;
+    }
+  }
