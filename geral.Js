@@ -104,8 +104,7 @@ function decToFrac(val){
             frac[1] = 10**tam
 
         }
-        simpFrac(frac[0],frac[1])
-        return(frac)
+        return(simpFrac(frac[0],frac[1]))
     }else{
         return val
     }
@@ -118,13 +117,17 @@ function simpFrac(nun,den){
     var sfrac = [];
     sfrac[0] = frac[0] % frac[1];
     if (sfrac[0]==1){
-        sfrac[1] = 1;
+        sfrac.push( 1);
         return sfrac;
     }else{
         var dec = []
         dec[0] = decompor(frac[0]);
         dec[1] = decompor(frac[1]);
-        var nfrac = [[]] ;
+        var nfrac = [] ;
+        var sfrac = [];
+        sfrac.push()
+        sfrac[0]= 1
+        sfrac[1]= 1
         
         
         
@@ -136,8 +139,9 @@ function simpFrac(nun,den){
         sol = 0
         for(let i = 0; i< dec[0].length;i++){
             //console.log("i = "+i)
+            //length = 5
             if (sol<dec[1].length){
-                for(let j = sol;j< dec[1].length;j++){
+                for(let j = sol;j< dec[1].length;j=sol){
                     console.log("j = "+j +' - dec[0] = ' + dec[1][j][0])
                     if(dec[0][i][0] == dec[1][j][0]){
                         console.log("op1"+k)
@@ -160,23 +164,46 @@ function simpFrac(nun,den){
                     k++;
                         break
                     }else{
-                        console.log("op3"+k)
+                        console.log("op3"+dec[1][j][0])
                         nfrac.push([])
-                        nfrac[k].push(dec[0][j][0])
+                        nfrac[k].push(dec[1][j][0])
                         nfrac[k][1] = -dec[1][j][1]
                         sol = j+1
                         k++;
                         continue
                     }
                 }
-            }else{
-
+            }else {
+                console.log("k"+ dec[0][i][1])
+                nfrac.push([])
+                nfrac[k].push(dec[0][i][0])
+                nfrac[k][1] = dec[0][i][1]
+                k++;
+                continue
+            }
+        }if(sol < dec[1].length){
+            for(let i1 = sol;i1<dec[1].length;i1=sol){
+                nfrac.push([])
+                nfrac[k].push(dec[1][i1][0])
+                nfrac[k][1] = -dec[1][i1][1]
+                k++;               
+                sol++
             }
         }
         console.log(nfrac)
-        for(let i = 0; i< nfrac.length;i++){
+        for(let nf = 0; nf< nfrac.length;nf++){
+            if(nfrac[nf][1] == 0){
+                continue
+            }else if(nfrac[nf][1] > 0){
+                sfrac[0] = sfrac[0] * (nfrac[nf][1]*nfrac[nf][0])
+            }else{
+                sfrac[1] = sfrac[1] * (-nfrac[nf][1]*nfrac[nf][0])
+            }
         }
+        console.log(sfrac)
+        return sfrac
     }
+
 }
 
 

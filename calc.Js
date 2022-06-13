@@ -4,7 +4,8 @@ function calc1(){
     var dec = decompor(Number(vl));
     console.log(dec)
     var res = montarraiz(dec,divi)
-    decToFrac(vl)
+    
     document.getElementById("resul1").value=res;
+    document.getElementById("resul2").value=decToFrac(vl);
 
 }
