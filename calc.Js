@@ -6,8 +6,8 @@ function calc1(){
     var res = montarraiz(dec,divi)
     
     document.getElementById("resul1").value=res;
-    document.getElementById("resul2").value=decToFrac(vl[0]);
-    document.getElementById("resul3").value=decToFrac(vl[1])
+    document.getElementById("resul2").value=decToFrac(vl)[0];
+    document.getElementById("resul3").value=decToFrac(vl)[1]
 
 }
 Function doispontos(ax,ay,bx,by){
