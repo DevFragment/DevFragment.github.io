@@ -10,6 +10,4 @@ function calc1(){
     document.getElementById("resul3").value=decToFrac(vl)[1]
 
 }
-Function doispontos(ax,ay,bx,by){
 
-}
