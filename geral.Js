@@ -110,14 +110,16 @@ function decToFrac(val){
     }
 }
 function simpFrac(nun,den){
+console.log(nun + " / " + den)
     var frac = []
-    frac[0]=nun;
-    frac[1]=den;
+    frac[0]=Number(nun);
+    frac[1]=(Number(den));
 
     var sfrac = [];
     sfrac[0] = frac[0] % frac[1];
     if (sfrac[0]==1){
         sfrac.push( 1);
+        console.log("if (sfrac[0]==1){")
         return sfrac;
     }else{
         var dec = []
